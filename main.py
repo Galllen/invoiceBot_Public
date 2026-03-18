@@ -9,6 +9,7 @@ from aiogram.types import Message
 from context.start import router as rt_start
 from context.keyboard import main_menu_kb
 from handlers.pulling import router as rt_pulling
+from handlers.navigate import router as rt_navigate
 
 from config import config
 
@@ -29,7 +30,7 @@ async def main():
 
     print("Bot starting...")
 
-
+    dp.include_router(rt_navigate)
     dp.include_router(rt_pulling)
     dp.include_router(rt_start)
     dp.include_router(rout)
